@@ -12,14 +12,18 @@ public class Principal {
 		carro.abastecer(20);
 		System.out.println("\n");
 		
-		Caminhao caminhao = new Caminhao(10,"Disel",200, 100, "Autobot", "Optimus Prime", 2010,2);
+		Carroceria carroceria = new Carroceria(100, false);
+		Caminhao caminhao = new Caminhao(10,"Disel",200, 100, "Autobot", "Optimus Prime", 2010,2, carroceria);
 		
 		System.out.println("Caminhão");
 		caminhao.acelera();
 		caminhao.freia();
 		caminhao.abastecer(50);
+		caminhao.getCarroceria().statusCarroceria();
 		caminhao.carregar();
+		caminhao.getCarroceria().statusCarroceria();
 		caminhao.descarregar();
+		caminhao.getCarroceria().statusCarroceria();
 		System.out.println("\n");
 		
 		Moto moto = new Moto(2, "Gasolina", 300, 15, "Honda", "Biz", 2010);

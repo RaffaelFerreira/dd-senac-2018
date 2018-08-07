@@ -3,7 +3,7 @@ package com.senac.dd.aula04.exercicio;
 public class Veiculo {
 	
 	protected int roda;
-	protected String combustivel;
+	protected String combustivel; 
 	protected double potencia;
 	protected double tanque;
 	protected String marca;

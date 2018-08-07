@@ -1,5 +1,5 @@
 package com.senac.dd.aula04.exercicio;
-
+ 
 public class Moto extends Veiculo {
 	
 	public Moto(int roda, String combustivel, double potencia, double tanque, String marca, String modelo, int ano) {
