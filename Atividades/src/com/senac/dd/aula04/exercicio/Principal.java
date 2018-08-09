@@ -1,39 +1,47 @@
 package com.senac.dd.aula04.exercicio;
 
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 public class Principal {
+	
+	public static Veiculo cadastrarCarro(){
+		
+		Carro carro = new Carro();
+		
+		carro.setRoda(Integer.parseInt(JOptionPane.showInputDialog("Digite quantas rodas tem o seu carro: ")));
+		carro.setCombustivel(JOptionPane.showInputDialog("Digite o combustivel"));
+		carro.setPotencia(Double.parseDouble(JOptionPane.showInputDialog("Digite potencia do carro")));
+		carro.setTanque(Double.parseDouble(JOptionPane.showInputDialog("Digite quantos litros tem o tanque")));
+		carro.setMarca(JOptionPane.showInputDialog("Digite a marca do carro"));
+		carro.setModelo(JOptionPane.showInputDialog("Digite o modelo do carro"));
+		carro.setPortamala(Double.parseDouble(JOptionPane.showInputDialog("Digite quantos litros tem o porta mala")));
+		
+		return carro;		
+	}
 
 	public static void main(String[] args) {
 		
-		Carro carro = new Carro(4, "Gasolina", 90, 45, "Fiat", "Palio",2003, 30);
+		ArrayList<Veiculo> veiculos = new ArrayList<>();
 		
-		System.out.println("Carro");
-		carro.acelera();
-		carro.freia();
-		carro.abastecer(20);
-		System.out.println("\n");
+		JOptionPane.showMessageDialog(null, "Bem vindo ao meu programa");
 		
-		Carroceria carroceria = new Carroceria(100, false);
-		Caminhao caminhao = new Caminhao(10,"Disel",200, 100, "Autobot", "Optimus Prime", 2010,2, carroceria);
+		String menu = "MENU\n";
+        menu = menu + "1 – Cadastrar Carro\n";
+        menu = menu + "2 – Cadastrar Caminhao\n";
+        menu = menu + "3 – Cadastrar Moto\n";
+        menu = menu + "9 – SAIR";
+        int opcao = Integer.parseInt(JOptionPane.showInputDialog(menu));
+        
+        if(opcao == 1) {
+        	veiculos.add(cadastrarCarro());
+        }
+       
 		
-		System.out.println("Caminhão");
-		caminhao.acelera();
-		caminhao.freia();
-		caminhao.abastecer(50);
-		caminhao.getCarroceria().statusCarroceria();
-		caminhao.carregar();
-		caminhao.getCarroceria().statusCarroceria();
-		caminhao.descarregar();
-		caminhao.getCarroceria().statusCarroceria();
-		System.out.println("\n");
 		
-		Moto moto = new Moto(2, "Gasolina", 300, 15, "Honda", "Biz", 2010);
 		
-		System.out.println("Moto");
-		moto.acelera();
-		moto.freia();
-		moto.abastecer(10);
-		moto.empinar();
-		System.out.println("\n");
+				
 		
 		
 		
